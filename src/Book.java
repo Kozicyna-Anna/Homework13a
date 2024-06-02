@@ -1,0 +1,49 @@
+public class Book {
+    private String title;
+    private Author author;
+    private int publisherYear;
+
+    public Book(String title, Author author, int publisherYear) {
+        this.title = title;
+        this.author = author;
+        this.publisherYear = publisherYear;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public int getPublisherYear() {
+        return publisherYear;
+    }
+
+    public void setPublisherYear(int publisherYear) {
+        this.publisherYear = publisherYear;
+    }
+
+    public String toString() {
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", author=" + author +
+                ", publisherYear=" + publisherYear +
+                '}';
+    }
+
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return publisherYear == book.publisherYear && Object.equals(title, book.title) && Object.equals(author, book.author);
+    }
+
+    public int hashCode() {
+        return Object.hash(title, author, publisherYear);
+    }
+}
+
+
+
